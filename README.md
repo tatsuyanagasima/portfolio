@@ -10,6 +10,13 @@ Next.js（TypeScript）とSupabaseを用いたフルスタック構成で、日�
 ## サイトイメージ
 チャート描画：Chart.js![ChatGPT Image 2025年5月27日 00_19_45](https://github.com/user-attachments/assets/e70bce87-ab83-43d4-be3a-38c5f2d0d2f9)
 
+
+## 設計ドキュメント
+
+[要件定義・基本設計・詳細設計の一覧_Googleスプレッドシート](https://docs.google.com/spreadsheets/d/1yCv84vdfhXLyGrSnAAy68239r-LzfslNElnfcQ0W9PI/edit?gid=649127913#gid=649127913)
+
+
+
 ## 使用技術
 フロントエンド：Next.js 14（App Router）
 
