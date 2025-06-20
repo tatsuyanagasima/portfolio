@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-green: 138 155 92; /* #3a9b5c */
+  --accent-yellow: 252 211 77; /* #fcd34d */
+  --background-ivory: 254 252 248; /* #fefcf8 */
+  --text-dark: 31 41 55; /* #1f2937 - より濃いチャコールグレー */
+
+  --background: var(--background-ivory);
+  --foreground: var(--text-dark);
+
+  --card: 255 255 255;
+  --card-foreground: var(--text-dark);
+
+  --popover: 255 255 255;
+  --popover-foreground: var(--text-dark);
+
+  --primary: var(--main-green);
+  --primary-foreground: 255 255 255;
+
+  --secondary: var(--accent-yellow);
+  --secondary-foreground: var(--text-dark);
+
+  --muted: 243 244 246; /* #f3f4f6 */
+  --muted-foreground: 75 85 99; /* #4b5563 - より濃いグレー */
+
+  --accent: var(--accent-yellow);
+  --accent-foreground: var(--text-dark);
+
+  --destructive: 239 68 68;
+  --destructive-foreground: 255 255 255;
+
+  --border: 209 213 219; /* #d1d5db */
+  --input: 255 255 255; /* 白い背景 */
+  --ring: var(--main-green);
+
+  --radius: 0.5rem;
+
+  /* Chart colors */
+  --chart-1: var(--main-green);
+  --chart-2: var(--accent-yellow);
+}
+
+.dark {
+  --background: 17 24 39; /* #111827 */
+  --foreground: 243 244 246; /* #f3f4f6 */
+
+  --card: 31 41 55; /* #1f2937 */
+  --card-foreground: 243 244 246; /* #f3f4f6 */
+
+  --popover: 31 41 55; /* #1f2937 */
+  --popover-foreground: 243 244 246; /* #f3f4f6 */
+
+  --primary: var(--main-green);
+  --primary-foreground: 255 255 255;
+
+  --secondary: var(--accent-yellow);
+  --secondary-foreground: 17 24 39; /* #111827 */
+
+  --muted: 55 65 81; /* #374151 */
+  --muted-foreground: 156 163 175; /* #9ca3af */
+
+  --accent: var(--accent-yellow);
+  --accent-foreground: 17 24 39; /* #111827 */
+
+  --destructive: 239 68 68;
+  --destructive-foreground: 255 255 255;
+
+  --border: 55 65 81; /* #374151 */
+  --input: 31 41 55; /* #1f2937 */
+  --ring: var(--main-green);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-noto-sans-jp), "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: rgb(var(--text-dark));
+  }
+
+  /* 入力フィールドのスタイル改善 */
+  input::placeholder {
+    color: rgb(75 85 99 / 0.6); /* #4b5563 with opacity */
+  }
+
+  input {
+    color: rgb(var(--text-dark)) !important;
+  }
+
+  /* フォーカス時のスタイル */
+  input:focus {
+    color: rgb(var(--text-dark)) !important;
+  }
+}
+
+@layer components {
+  .mood-emoji {
+    @apply text-2xl transition-transform hover:scale-110 active:scale-95;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center justify-center flex-1 h-full text-xs transition-colors;
+  }
+
+  .nav-item-active {
+    @apply text-green-600 font-bold;
+  }
+  
+  .nav-item-inactive {
+    @apply text-gray-400 hover:text-green-600;
+  }
+  
+
+  .auth-background {
+    @apply bg-gradient-to-br from-background-ivory to-accent-yellow/10;
+    background-image: radial-gradient(circle at 25% 25%, rgba(58, 155, 92, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(252, 211, 77, 0.05) 0%, transparent 50%);
+  }
+
+  /* テキストの一貫性を保つためのユーティリティクラス */
+  .text-primary-dark {
+    color: rgb(31 41 55); /* #1f2937 */
+  }
+
+  .text-secondary-dark {
+    color: rgb(75 85 99); /* #4b5563 */
+  }
+}
